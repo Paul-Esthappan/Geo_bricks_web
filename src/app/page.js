@@ -19,23 +19,22 @@ export default function Home() {
     "https://lh3.googleusercontent.com/p/AF1QipMS5GiuPhBEYetdblP1CUeczs9aSlLFqjyL0ZF3=s1360-w1360-h1020-rw",
     "https://lh3.googleusercontent.com/p/AF1QipNDAnIyAaBcOrBYsrqCj-sITwjcP5cl4qF_vqgb=s1360-w1360-h1020-rw",
   ];
-    const images2 = [
+
+  const images2 = [
     "https://lh3.googleusercontent.com/p/AF1QipPRue3WyxjHhCWCiE4vreKiF5PgtTDGOW6sALiv=s1360-w1360-h1020-rw",
     "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqHAbUa7hGpyGGInXiHLp7ygI-tVLcBYCWxKO0wHqIzYLvJKiENAK2zedjcDEU0umc46Lc_wTRkHds1GG9MvFEASiwpYAKFgZxXtjWzrJQLbctoN6S46klpj_QH9vSvb2yMsJAr=s1360-w1360-h1020-rw",
     "https://lh3.googleusercontent.com/p/AF1QipPBkbJBGEUp56dJ7rFxzEYzqR5674vT6DS-2PHp=s1360-w1360-h1020-rw",
-  
     "https://lh3.googleusercontent.com/p/AF1QipMttFDy4vYU_ynUgSPKgG1FSNxnHhQ0NAZGyVBg=s1360-w1360-h1020-rw",
     "https://lh3.googleusercontent.com/p/AF1QipNwEXsAjItSErV7S8J7gmjKn_BzLQhas_VLLW3m=s1360-w1360-h1020-rw",
     "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqxVZiZ4MnhSR9FqyBxd14a0buvyfpr6gdBJblAMWdPdwLOXMc03_Y2CNbRXhLUnMFgC-mL33FK2HVcJp8_0TROvdwKADDRUIvtU3ys05O32leJIMl19rpr2aGV6lSdUPAQi41i=s1360-w1360-h1020-rw",
     "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npFT4kdz7ISt7MY5TImBa7k1meOCelRXZ0heNYGU86bBa39mbD8pz8RJ26uT4LhJSqlkUKyXBKgm1nnEyEjJubllxmWs9-NJVcCW8vTPD-rZEC1pLopEllvcGLuT0aB2oYoIDVGCA=s1360-w1360-h1020-rw",
     "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrBn4OvVX7YxKgGyhw0UzCjrL2SMGBWmO0zk-_hhw70TCviABIFb2qRe3sraNymZexXA98l_5zOwdg8Lv8Lv3BO9FkfoVYgcN6TLCmUkxLY0tTAu1029jlI-P5QoYhl-wHzlAey2A=s1360-w1360-h1020-rw",
-
     "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noPrvgUKcyyuyG2tYHVodViWTS8pF5q1NDAfn7sC28UbS2Qxa4t21o7EO78Jq2oLa0w5EjKB2B9BEvRTJ845UELY2cUvLm-xuHxYhywdJIMq40gIZkZszA49bb7EieDZA5W1xE=s1360-w1360-h1020-rw",
     "https://lh3.googleusercontent.com/p/AF1QipN9cvBL2QUoqdQtzdBe0AZGPRjj1rSru0TdIekr=s1360-w1360-h1020-rw",
-
     "https://lh3.googleusercontent.com/p/AF1QipNyHTKqrNVv-VLV4AQzV6WdNLQaPTZg_lAkWIgx=s1360-w1360-h1020-rw",
     "https://lh3.googleusercontent.com/p/AF1QipNi-1umjcwianhh4eOOzjKr9ieXrPVCyg1PO7vo=s1360-w1360-h1020-rw",
   ];
+
   return (
     <main className="min-h-screen flex flex-col items-center px-6 py-12">
       {/* Logo + Heading */}
@@ -48,21 +47,25 @@ export default function Home() {
         <h1 className="text-6xl font-extrabold tracking-tight text-green-700">
           GEO PRODUCTS
         </h1>
-       
-<h2 className="text-2xl text-green-900 font-bold">STEEL WINDOWS & DOORS</h2>
-        <h2 className="text-2xl text-green-900 font-bold">CONCRETE IINTERLOCKING BRICKS</h2>
-       
+        <h2 className="text-2xl text-green-900 font-bold">
+          STEEL WINDOWS &amp; DOORS
+        </h2>
+        <h2 className="text-2xl text-green-900 font-bold">
+          CONCRETE INTERLOCKING BRICKS
+        </h2>
       </div>
 
       {/* About Us */}
       <section className="max-w-2xl text-center mb-12">
         <p className="text-lg text-gray-700 mb-3 font-bold italic">
-          "Geo Products is a trusted concrete interlocking brick manufacturing and Steel Door and windows
-          company with more than 5 years of experience in the industry."
+          &quot;Geo Products is a trusted concrete interlocking brick
+          manufacturing and Steel Door and windows company with more than 5
+          years of experience in the industry.&quot;
         </p>
         <p className="text-lg text-gray-700">
-          "We are dedicated to providing high-quality, durable, and eco-friendly
-          interlocking bricks that make construction easier and cost-effective."
+          &quot;We are dedicated to providing high-quality, durable, and
+          eco-friendly interlocking bricks that make construction easier and
+          cost-effective.&quot;
         </p>
       </section>
 
@@ -81,7 +84,7 @@ export default function Home() {
             />
           ))}
         </div>
-               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 pt-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 pt-5">
           {images2.map((src, i) => (
             <img
               key={i}
@@ -136,6 +139,12 @@ export default function Home() {
             className="text-green-700 font-medium hover:underline"
           >
             +91 9400417316
+          </a>{" "}
+          |{" "}
+          <a
+            href="tel:+918129777667"
+            className="text-green-700 font-medium hover:underline"
+          >
             +91 8129777667
           </a>
         </p>
@@ -155,11 +164,9 @@ export default function Home() {
         </p>
       </section>
 
-       {/* Social Media Section */}
+      {/* Social Media Section */}
       <section className="max-w-4xl w-full text-center mb-16">
-        <h2 className="text-3xl font-bold text-green-700 mb-6">
-          Follow Us
-        </h2>
+        <h2 className="text-3xl font-bold text-green-700 mb-6">Follow Us</h2>
         <div className="flex flex-wrap justify-center gap-8">
           {/* Instagram Geo Steel */}
           <a
@@ -174,7 +181,7 @@ export default function Home() {
               className="w-8 h-8 rounded-full"
             />
             <span className="font-medium text-gray-700">
-              Geo Steel Windows & Doors
+              Geo Steel Windows &amp; Doors
             </span>
           </a>
 
@@ -207,9 +214,7 @@ export default function Home() {
               alt="Facebook"
               className="w-8 h-8 rounded-full"
             />
-            <span className="font-medium text-gray-700">
-              Geo Bricks
-            </span>
+            <span className="font-medium text-gray-700">Geo Bricks</span>
           </a>
 
           {/* Facebook Geo Windows */}
@@ -225,15 +230,14 @@ export default function Home() {
               className="w-8 h-8 rounded-full"
             />
             <span className="font-medium text-gray-700">
-              Geo Steel Windows & Doors
+              Geo Steel Windows &amp; Doors
             </span>
           </a>
         </div>
       </section>
 
       {/* WhatsApp Floating Button */}
-
-<a
+      <a
         href="https://wa.me/919400417316"
         target="_blank"
         rel="noopener noreferrer"
@@ -247,9 +251,8 @@ export default function Home() {
         >
           <path d="M16.88 14.68c-.3-.15-1.78-.87-2.05-.97s-.47-.15-.66.15-.76.97-.93 1.17-.34.22-.63.07c-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.48-1.74-1.65-2.04s-.02-.46.13-.61c.13-.13.3-.34.45-.51.15-.15.2-.26.3-.43.1-.15.05-.3-.02-.43-.07-.13-.66-1.59-.91-2.18-.24-.57-.49-.5-.66-.51h-.56c-.18 0-.46.05-.7.34s-.91.88-.91 2.15 1 2.5 1.14 2.68c.15.18 1.95 3 4.72 4.2 2.78 1.18 2.78.79 3.28.74.5-.05 1.55-.63 1.77-1.23.23-.59.23-1.09.16-1.2-.07-.1-.3-.15-.63-.3z" />
         </svg>
-         <p>Chat for quote</p>
+        <p className="ml-2">Chat for quote</p>
       </a>
-
     </main>
   );
 }
