@@ -1,10 +1,29 @@
-export const metadata = {
-  title: "Geo Bricks - Concrete Interlocking Bricks",
-  description:
-    "Geo Bricks is a trusted concrete interlocking brick manufacturing company in Kerala.",
-};
+"use client";
 
 export default function Home() {
+  // Generic conversion tracker with label
+  const trackConversion = (sendToId, label) => {
+    if (typeof window.gtag !== "undefined") {
+      window.gtag("event", "conversion", {
+        send_to: sendToId,
+        event_label: label,
+      });
+    }
+  };
+
+  // Track "Get Directions" conversion
+  const handleDirectionsClick = () => {
+    trackConversion(
+      "AW-17576087140/m-7gCKvaqqMbEOSc97xB",
+      "Get Directions Click"
+    );
+  };
+
+  // Track "Contact" conversion (phone / WhatsApp)
+  const handleContactClick = (label) => {
+    trackConversion("AW-17576087140/7AnSCKjaqqMbEOSc97xB", label);
+  };
+
   const images = [
     "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nryEs76g6ZYE61ejpCbT_pH4RLaKwjevewEkyIG9-69e3xV3Gfr8zesmEvYYg_V3Ja2xaxNRys08c27BYgzDhLhHusJ_CD6gTrx02fiT3G5R07qxNIG84ASHRQYgISOy0PICAJtNw=s1360-w1360-h1020-rw",
     "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqiFJk_cfOUkPpZ9rfPuQLmKPfFxMgKU6igrs-jikb4b8SdcfkW7rZi-OOisY8uwG33s_kfyF8dK6PJV8jwsVBnV4XTVLXPFeVdXODiNjEg7GB0x7CchnWyYF9BofRdcc79_lXF=s1360-w1360-h1020-rw",
@@ -36,36 +55,37 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen flex flex-col items-center px-6 py-12">
+    <main className="min-h-screen flex flex-col items-center px-6 py-12 bg-gray-50">
       {/* Logo + Heading */}
-      <div className="flex items-center gap-4 mb-6 flex-col">
+      <div className="flex items-center gap-4 mb-6 flex-col justify-center">
         <img
-          src="https://scontent.fcok14-1.fna.fbcdn.net/v/t39.30808-1/300583196_461743002631932_6494022114130504981_n.jpg?stp=c10.0.740.740a_dst-jpg_s200x200_tt6&_nc_cat=109&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=vVU7IlpvUpEQ7kNvwGkbBvY&_nc_oc=AdmDs369qnnpaAMJFaj6asLZSVqrlVlkkbbw3YMzt2BnpCMvPnxY9jie8Q4XM849_m4&_nc_zt=24&_nc_ht=scontent.fcok14-1.fna&_nc_gid=9No4LUUobhVLPkpTUdM1WA&oh=00_AfZfXSIY-1Bn775z2_Vvelv8p7edWPh_4C9pqRY-inQ5-w&oe=68DDA62F"
+          src="/logo.jpg"
           alt="Geo Bricks Logo"
-          className="w-16 h-16 object-cover rounded-full shadow-md"
+          className="w-20 h-20 object-cover rounded-full shadow-md"
         />
-        <h1 className="text-6xl font-extrabold tracking-tight text-green-700">
-          GEO PRODUCTS
-        </h1>
-        <h2 className="text-2xl text-green-900 font-bold">
-          STEEL WINDOWS &amp; DOORS
-        </h2>
-        <h2 className="text-2xl text-green-900 font-bold">
-          CONCRETE INTERLOCKING BRICKS
-        </h2>
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight text-green-700">
+            GEO PRODUCTS
+          </h1>
+          <h2 className="text-1xl md:text-2xl text-green-900 font-bold">
+            STEEL WINDOWS &amp; DOORS
+          </h2>
+          <h2 className="text-1xl md:text-2xl text-green-900 font-bold">
+            CONCRETE INTERLOCKING BRICKS
+          </h2>
+        </div>
       </div>
 
       {/* About Us */}
       <section className="max-w-2xl text-center mb-12">
         <p className="text-lg text-gray-700 mb-3 font-bold italic">
-          &quot;Geo Products is a trusted concrete interlocking brick
-          manufacturing and Steel Door and windows company with more than 5
-          years of experience in the industry.&quot;
+          "Geo Products is a trusted concrete interlocking brick manufacturing
+          and Steel Door and windows company with more than 5 years of
+          experience in the industry."
         </p>
         <p className="text-lg text-gray-700">
-          &quot;We are dedicated to providing high-quality, durable, and
-          eco-friendly interlocking bricks that make construction easier and
-          cost-effective.&quot;
+          "We are dedicated to providing high-quality, durable, and eco-friendly
+          interlocking bricks that make construction easier and cost-effective."
         </p>
       </section>
 
@@ -137,6 +157,7 @@ export default function Home() {
           <a
             href="tel:+919400417316"
             className="text-green-700 font-medium hover:underline"
+            onClick={() => handleContactClick("Phone Click - 9400417316")}
           >
             +91 9400417316
           </a>{" "}
@@ -144,6 +165,7 @@ export default function Home() {
           <a
             href="tel:+918129777667"
             className="text-green-700 font-medium hover:underline"
+            onClick={() => handleContactClick("Phone Click - 8129777667")}
           >
             +91 8129777667
           </a>
@@ -157,6 +179,7 @@ export default function Home() {
             href="https://share.google/7F6uBlFYbJqvoTT0M"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleDirectionsClick}
             className="text-green-700 font-medium hover:underline"
           >
             View on Google Maps
@@ -167,72 +190,44 @@ export default function Home() {
       {/* Social Media Section */}
       <section className="max-w-4xl w-full text-center mb-16">
         <h2 className="text-3xl font-bold text-green-700 mb-6">Follow Us</h2>
-        <div className="flex flex-wrap justify-center gap-8">
-          {/* Instagram Geo Steel */}
-          <a
-            href="https://www.instagram.com/geo_steel_windows_and_doors?igsh=dm9ndW4yMjU5NGV0"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-white p-4 rounded-xl shadow hover:shadow-lg hover:scale-105 transition"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
-              alt="Instagram"
-              className="w-8 h-8 rounded-full"
-            />
-            <span className="font-medium text-gray-700">
-              Geo Steel Windows &amp; Doors
-            </span>
-          </a>
-
-          {/* Instagram Geo Bricks */}
-          <a
-            href="https://www.instagram.com/geo_bricks_products?igsh=MTV5YTFuY3ZrbjQ4OQ=="
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-white p-4 rounded-xl shadow hover:shadow-lg hover:scale-105 transition"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
-              alt="Instagram"
-              className="w-8 h-8 rounded-full"
-            />
-            <span className="font-medium text-gray-700">
-              Geo Concrete Interlocking Bricks
-            </span>
-          </a>
-
-          {/* Facebook Geo Bricks */}
-          <a
-            href="https://www.facebook.com/share/19u2A2MKKm/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-white p-4 rounded-xl shadow hover:shadow-lg hover:scale-105 transition"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-              alt="Facebook"
-              className="w-8 h-8 rounded-full"
-            />
-            <span className="font-medium text-gray-700">Geo Bricks</span>
-          </a>
-
-          {/* Facebook Geo Windows */}
-          <a
-            href="https://www.facebook.com/share/19u2A2MKKm/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-white p-4 rounded-xl shadow hover:shadow-lg hover:scale-105 transition"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-              alt="Facebook"
-              className="w-8 h-8 rounded-full"
-            />
-            <span className="font-medium text-gray-700">
-              Geo Steel Windows &amp; Doors
-            </span>
-          </a>
+        <div className="flex flex-wrap justify-center gap-6">
+          {[
+            {
+              href: "https://www.instagram.com/geo_steel_windows_and_doors",
+              label: "Geo Steel Windows & Doors",
+              icon: "https://cdn-icons-png.flaticon.com/512/1384/1384063.png",
+            },
+            {
+              href: "https://www.instagram.com/geo_bricks_products",
+              label: "Geo Concrete Interlocking Bricks",
+              icon: "https://cdn-icons-png.flaticon.com/512/1384/1384063.png",
+            },
+            {
+              href: "https://www.facebook.com/share/19u2A2MKKm/",
+              label: "Geo Bricks",
+              icon: "https://cdn-icons-png.flaticon.com/512/733/733547.png",
+            },
+            {
+              href: "https://www.facebook.com/share/19u2A2MKKm/",
+              label: "Geo Steel Windows & Doors",
+              icon: "https://cdn-icons-png.flaticon.com/512/733/733547.png",
+            },
+          ].map((sm, idx) => (
+            <a
+              key={idx}
+              href={sm.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 bg-white p-4 rounded-xl shadow hover:shadow-lg hover:scale-105 transition w-72 justify-center"
+            >
+              <img
+                src={sm.icon}
+                alt={sm.label}
+                className="w-8 h-8 rounded-full"
+              />
+              <span className="font-medium text-gray-700">{sm.label}</span>
+            </a>
+          ))}
         </div>
       </section>
 
@@ -241,16 +236,14 @@ export default function Home() {
         href="https://wa.me/919400417316"
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => handleContactClick("WhatsApp Chat")}
         className="fixed right-5 bottom-5 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center z-50 transition transform hover:scale-110"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-7 w-7"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M16.88 14.68c-.3-.15-1.78-.87-2.05-.97s-.47-.15-.66.15-.76.97-.93 1.17-.34.22-.63.07c-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.48-1.74-1.65-2.04s-.02-.46.13-.61c.13-.13.3-.34.45-.51.15-.15.2-.26.3-.43.1-.15.05-.3-.02-.43-.07-.13-.66-1.59-.91-2.18-.24-.57-.49-.5-.66-.51h-.56c-.18 0-.46.05-.7.34s-.91.88-.91 2.15 1 2.5 1.14 2.68c.15.18 1.95 3 4.72 4.2 2.78 1.18 2.78.79 3.28.74.5-.05 1.55-.63 1.77-1.23.23-.59.23-1.09.16-1.2-.07-.1-.3-.15-.63-.3z" />
-        </svg>
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+          alt="WhatsApp"
+          className="w-6 h-6"
+        />
         <p className="ml-2">Chat for quote</p>
       </a>
     </main>
